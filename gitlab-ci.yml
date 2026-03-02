@@ -1,4 +1,4 @@
-##Stages of the pipeline / Globaler Bereich ------------------
+##Anfang Stages of the pipeline / Globaler Bereich ------------------
 
 stages:
   - lint
@@ -6,14 +6,14 @@ stages:
   - build
   - docker
   - secret-detection
-##Stages of the pipeline ------------------
+##Ende Stages of the pipeline ------------------
 
 variables:
   SECRET_DETECTION_ENABLED: 'true'
 
 ##Ende Globaler Bereich ------------------
 
-##JOBS-Bereich ------------------
+##Anfang JOBS-Bereich ------------------
 secret_detection:
   stage: secret-detection
 include:
