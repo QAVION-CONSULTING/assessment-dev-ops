@@ -15,6 +15,13 @@ variables:
 
 ##Anfang JOBS-Bereich ------------------
 
+lint:
+  stage: lint
+  image: python:3.12-slim
+  before_script:
+    - pip install flake8
+  script:
+    - flake8 backend/app
 
 test:
   stage: test
@@ -24,6 +31,8 @@ test:
     - pip install pytest
   script:
     - pytest
+
+
 
 secret_detection:
   stage: secret-detection
