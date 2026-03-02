@@ -1,12 +1,22 @@
+##Stages of the pipeline / Globaler Bereich ------------------
+
 stages:
   - lint
   - test
   - build
   - docker
   - secret-detection
+##Stages of the pipeline ------------------
+
 variables:
   SECRET_DETECTION_ENABLED: 'true'
+
+##Ende Globaler Bereich ------------------
+
+##JOBS-Bereich ------------------
 secret_detection:
   stage: secret-detection
 include:
 - template: Security/Secret-Detection.gitlab-ci.yml
+
+##Ende JOBS-Bereich ------------------
