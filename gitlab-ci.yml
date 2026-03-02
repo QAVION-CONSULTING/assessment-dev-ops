@@ -3,3 +3,10 @@ stages:
   - test
   - build
   - docker
+  - secret-detection
+variables:
+  SECRET_DETECTION_ENABLED: 'true'
+secret_detection:
+  stage: secret-detection
+include:
+- template: Security/Secret-Detection.gitlab-ci.yml
