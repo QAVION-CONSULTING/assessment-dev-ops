@@ -27,3 +27,16 @@ Der öffentliche Endpoint wird nur über Nginx verfügbar gemacht. Das Backend u
 - Azure Key Vault verwenden
 - Container-Apps rufen Secrets zur Laufzeit über Umgebungsvariablen ab.
 - Keine sensiblen Daten im Code oder im Repository speichern.
+
+
+
+# 6. Observability
+- Azure Monitor und Log Analytics sollen für Protokolle und Metriken aktiviert werden.
+- Warnmeldungen sollen für folgende Ereignisse konfiguriert werden:
+  - Neustart von Containern
+  - Hohe CPU-Auslastung
+
+# 7. Scaling Strategy
+- Kubernetes (AKS)
+
+# 8. Rollout Strategy
