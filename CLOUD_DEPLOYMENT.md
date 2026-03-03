@@ -40,3 +40,15 @@ Der öffentliche Endpoint wird nur über Nginx verfügbar gemacht. Das Backend u
 - Kubernetes (AKS)
 
 # 8. Rollout Strategy
+- Blue-Green-Rollouts: Zwei identische Produktionsumgebungen (Blue=alt, Green=neu). Neue Version in Green deployen, Traffic umschalten. Schnelles Rollback durch Rückswitch.
+
+# 9. Disaster Recovery
+- Automatische Backups von PostgreSQL sollen aktiviert werden
+- Geo-redundant backup storage gewährleisten den Schutz der Daten.
+- Docker-Images werden versioniert und in der Azure Container Registry (ACR) gespeichert.
+– IaC (Infrastructure as Code) soll mit Terraform-Vorlagen implementiert werden.
+
+# 10. Cost Awareness
+- Container-Apps sollen mit einem Verbrauchsplan ausgeführt werden
+– Monitoring und Warnmeldungen sollen helfen, unerwarteten Ressourcenverbrauch zu vermeiden.
+– Skalierungsgrenzen sollen gesetzt werden, um zusätzliche Kosten zu vermeiden.
