@@ -32,7 +32,17 @@ test:
   script:
     - pytest
 
-docker-build:
+#docker-build:
+#  stage: docker
+#  image: docker:24
+#  services:
+#    - docker:24-dind
+#  variables:
+#    DOCKER_DRIVER: overlay2
+#  script:
+#    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA backend/
+
+docker-test:
   stage: docker
   image: docker:24
   services:
@@ -40,7 +50,13 @@ docker-build:
   variables:
     DOCKER_DRIVER: overlay2
   script:
-    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA backend/
+    - docker compose up -d --build
+    - sleep 10
+    - docker compose ps
+    - docker compose logs backend
+    - docker compose down
+    - apk add curl
+    - curl http://localhost/health
 
 secret_detection:
   stage: secret-detection
