@@ -13,3 +13,17 @@ Dienst besteht aus drei Komponenten:
 
 Der öffentliche Endpoint wird nur über Nginx verfügbar gemacht. Das Backend und die Datenbank sind privat und innerhalb eines virtuellen Netzwerks (VNet) isoliert.  
 
+# 3. Compute Strategy
+- Azure Container Apps wird für Container verwendet.
+- Jeder Container läuft in seiner eigenen Umgebung mit isolierten Ressourcen.
+- Container Apps bieten integrierte Skalierung, Zustandsüberwachung und Revisionskontrolle.
+
+# 4. Networking Design
+– Das Backend kommuniziert über ein privates VNet mit der Datenbank.
+– Die Datenbank ist nicht öffentlich zugänglich.
+- Nginx verarbeitet den eingehenden Datenverkehr und leitet Anfragen an das Backend weiter.
+
+# 5. Secrets Management
+- Azure Key Vault verwenden
+- Container-Apps rufen Secrets zur Laufzeit über Umgebungsvariablen ab.
+- Keine sensiblen Daten im Code oder im Repository speichern.
