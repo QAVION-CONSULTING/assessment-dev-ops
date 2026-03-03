@@ -1,5 +1,6 @@
 -Fehler korrigieren
 -gefundene credentials mit secret_detection angehen
 -Security weiter beachten
+-weitere Tests (z.B. Unit, Integration)
 -Docker Swarm / Kubernetes in Betracht ziehen -> Hochverfügbarkeit
 -Monitoring
