@@ -4,3 +4,4 @@
 -weitere Tests (z.B. Unit, Integration)
 -Docker Swarm / Kubernetes in Betracht ziehen -> Hochverfügbarkeit
 -Monitoring
+-Docker Push in Registry
